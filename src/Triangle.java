@@ -39,16 +39,25 @@ public class Triangle extends Shape {
         this.t2 = t2;
         this.t3 = t3;
     }
-    public double getPerimeter(){
-        return this.t1+this.t2+this.t3;
+
+    @Override
+    double getPerimeter() {
+        return this.t1 + this.t2 + this.t3;
     }
-    public double getArea(){
-        double p =  getPerimeter()/2;
-        return Math.sqrt(p*(p-t1)*(p-t2)*(p-t3));
+
+    @Override
+    double getArea() {
+        double p = getPerimeter() / 2;
+        return Math.sqrt(p * (p - this.t1) * (p - this.t2) * (p - this.t3));
     }
 
     @Override
     public String toString() {
-        return "Triangle{}";
+        return "Triangle: a,b,c=" + t1 + "," + t2 + "," + t3;
+    }
+
+    @Override
+    public void howToColor() {
+        super.howToColor();
     }
 }

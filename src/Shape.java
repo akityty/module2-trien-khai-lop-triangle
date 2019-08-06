@@ -1,4 +1,4 @@
-public class Shape {
+abstract class Shape implements Colorable {
     private String color = "Green";
     private boolean filled = true;
 
@@ -26,8 +26,16 @@ public class Shape {
     public void setFilled(boolean filled) {
         this.filled = filled;
     }
+    abstract double getPerimeter();
+    abstract double getArea();
+
     @Override
     public String toString() {
         return "";
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides");
     }
 }
